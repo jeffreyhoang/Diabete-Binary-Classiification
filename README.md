@@ -1,10 +1,6 @@
 # Logistic Regression for Binary Classification
 
-This project implements and compares logistic regression models for predicting diabetes in patients using a dataset of health metrics. The model was built as part of an assignment for the 4210 Fall 2024 class and covers three main approaches: using Scikit-learn, a custom implementation with NumPy, and PyTorch.
-
-## Project Overview
-
-The objective of this project is to understand key concepts in machine learning, including logistic regression, gradient descent optimization, and cross-entropy loss, while applying them to a real-world binary classification task. We use a dataset of 768 diabetes patients, each with 8 baseline variables (e.g., glucose levels, blood pressure, BMI) to predict if a patient is positive (1) or negative (0) for diabetes.
+This project implements logistic regression to predict diabetes using health metrics data, covering three approaches: Scikit-learn, custom NumPy implementation, and PyTorch.
 
 ## Dataset
 
@@ -18,62 +14,49 @@ The dataset (`diabetes2.csv`) contains the following features:
 - **Diabetes Pedigree Function**
 - **Age**
 
+The goal is to predict whether a patient has diabetes (1) or not (0).
+
 ## Project Tasks
 
-### Task 1: Data Preprocessing
-- Preprocessed the data with Scikit-learn's pipeline, including feature scaling.
-
-### Task 2: Data Splitting
-- Split the data into three sets: training (60%), validation (20%), and testing (20%).
-
-### Task 3: Logistic Regression with Scikit-learn
-- Used Scikit-learn’s `LogisticRegression()` to fit a logistic regression model.
-- Calculated log-loss errors for training, validation, and testing sets.
-- Displayed the confusion matrix for the model’s predictions on the testing set.
-
-### Task 4: Logistic Regression from Scratch with NumPy
-- Implemented logistic regression with stochastic gradient descent (SGD) in NumPy.
-- Implemented cross-entropy loss and its gradient.
-- Plotted learning curves showing training and validation errors over batches.
-- Tuned hyperparameters to closely match the Scikit-learn model's results.
-- Printed cross-entropy errors on training, validation, and testing datasets.
-
-### Task 5: Logistic Regression with PyTorch
-- Created and trained a logistic regression model in PyTorch.
-- Used available PyTorch methods like `torch.nn.Linear()`, `torch.sigmoid()`, and `torch.nn.BCELoss()`.
-- Plotted learning curves showing training and validation errors across epochs.
-- Tuned hyperparameters to achieve performance similar to the Scikit-learn model.
-- Printed cross-entropy errors on training, validation, and testing datasets.
+1. **Data Preprocessing**: Scaled features using Scikit-learn’s pipeline.
+2. **Data Splitting**: Split data into training (60%), validation (20%), and testing (20%) sets.
+3. **Logistic Regression with Scikit-learn**: Fit and evaluated a logistic regression model.
+4. **Logistic Regression from Scratch with NumPy**: Implemented logistic regression with SGD, custom cross-entropy loss, and gradient.
+5. **Logistic Regression with PyTorch**: Created and trained a logistic regression model using PyTorch.
 
 ## How to Run the Project
 
-1. Ensure you have the necessary dependencies:
-   - Python 3.7+
-   - NumPy
-   - Scikit-learn
-   - PyTorch
-   - Matplotlib
-2. Upload the dataset (`diabetes2.csv`) to Google Drive in the `MyDrive/Colab Notebooks/datasets/` directory.
-3. Run the iPython notebook `yourLastName_yourFirstName_assignment2.ipynb` in Google Colab or Jupyter Notebook to execute the code for each task.
+1. Upload `diabetes2.csv` to Google Drive at `MyDrive/Colab Notebooks/datasets/diabetes2.csv`.
+2. Run the notebook `yourLastName_yourFirstName_assignment2.ipynb` in Google Colab or Jupyter Notebook.
 
 ## Results
 
-This project provides learning curves for each model and prints the cross-entropy errors for training, validation, and testing sets across all three approaches. Each approach was tuned to match or come close to the Scikit-learn model’s performance.
+Learning curves and cross-entropy errors on training, validation, and testing sets are provided for each model. Hyperparameters were tuned to achieve results close to the Scikit-learn model.
 
-## File Structure
+# Logistic Regression from Scikit-Learn Results
+Bias: -0.79302711
 
-- `diabetes2.csv`: Dataset with diabetes patient information.
-- `yourLastName_yourFirstName_assignment2.ipynb`: Main notebook file containing code and explanations for each task.
+Weights: [ 0.23022922  0.99633315 -0.19857463 -0.07201953 -0.04436089  0.85422255
+   0.1218909   0.39738786] 
 
-## Notes
+Training Log Loss: 0.4752883284278347
 
-1. Non-executable programs will result in a grade of zero.
-2. Regular Python program files (`.py`) are not acceptable; the notebook format (`.ipynb`) must be used.
-3. Ensure your notebook is properly commented.
-4. Name your submission in the format: `yourLastName_yourFirstName_assignment2.ipynb`.
+Validation Log Loss: 0.47892380385180466
 
-## License
+Testing Log Loss: 0.4906038530381513
 
-This project is intended for educational purposes only.
-# Diabete-Binary-Classiification
- 
+<img width="478" alt="Screenshot 2024-11-06 at 1 43 20 AM" src="https://github.com/user-attachments/assets/cd64c059-d254-468d-8395-24fcbf3dc935">
+
+# Logistic Regression from Stochastic Gradient Descent Results
+Bias: -0.79775049
+
+Weights: [0.25152051, 1.00913526, -0.17242659, -0.1130947, -0.02640905, 0.8715367, 0.1268932, 0.36254751]
+
+Training Error: 0.3488605406535597
+
+Validation Error: 0.476013858478927
+
+Testing Error: 0.4925132822283009
+
+<img width="703" alt="Screenshot 2024-11-06 at 1 45 57 AM" src="https://github.com/user-attachments/assets/ccf241cc-3798-49c4-9cc8-d4b4273a4ddf">
+
